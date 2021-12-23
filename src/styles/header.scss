@@ -1,0 +1,51 @@
+.header {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  &__logo {
+    max-width: 106px;
+    max-height: 40px;
+    padding: 15px 0;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    text-align: center;
+    font-size: 14px;
+    line-height: 17px;
+    color: rgba(31, 32, 65, 0.5);
+    span {
+      padding: 0 10px;
+    }
+  }
+  &__auth {
+    padding: 18px 0;
+  }
+  &__sign-in {
+    background: #ffffff;
+    width: 87px;
+    height: 34px;
+    border-radius: 22px;
+    border: 2px solid #bc9cff;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #bc9cff;
+  }
+  &__register {
+    width: 196px;
+    height: 34px;
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    border-radius: 22px;
+    border: none;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+}

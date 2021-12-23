@@ -1,0 +1,88 @@
+include /libs/_libs
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- link(rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css")
+        script(type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js")
+        script(type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js")
+        script(type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js")
+        script(src='../user.js')
+        script.
+            $(function() {
+            $("#from").daterangepicker({
+            autoUpdateInput: false,
+            singleDatePicker: false,
+            drops: "auto",
+            locale: {
+            applyLabel: 'Применить',
+            cancelLabel: 'Отчистить',
+            daysOfWeek:[
+                'ПН',
+                'ВТ',
+                'СР',
+                'ЧТ',
+                'ПТ',
+                'СБ',
+                'ВС'
+            ],
+            monthNames:[
+                'Январь',
+                'Февраль',
+                'Март',
+                'Апрель',
+                'Май',
+                'Июнь',
+                'Июль',
+                'Август',
+                'Сентябрь',
+                'Октябрь',
+                'Ноябрь',
+                'Декабрь'
+            ]
+            }
+             });
+
+            $("#from").on('apply.daterangepicker', function(ev, picker) {
+                $("#start").text(picker.startDate.format('DD.MM.YYYY'));  
+                $("#end").text(picker.endDate.format('DD.MM.YYYY'));
+            });
+
+            $("#from").on('cancel.daterangepicker', function(ev, picker) {
+                $(this).val('');
+            });
+            
+            });
+        script. 
+            function openModal(){
+                $("#dropdown").show() 
+            }
+            
+    body 
+        .form-persons
+            .form-persons__content
+                h1 Найдём номера под ваши пожелания
+                .form-persons__dates
+                    
+                    .form-persons__date
+                        label(for="from") Прибытие
+                            form
+                                span(id="start") ДД.ММ.ГГ
+                        input(id="from")
+                    .form-persons__date
+                        label(for="from") Выезд
+                            form
+                                span(id="end") ДД.ММ.ГГ
+                    
+                .form-persons__persons
+                    .form-persons__guests
+                        label(onclick="openModal()") Гости
+                        span(id='guests' onclick="openModal()") Количество гостей
+                    .dropdown(id="dropdown")
+                        include ./dropdown
+            .form-persons__action
+                button
+                    span Подобрать номер 
+                    img(src="./src/images/arrow_forward.svg")

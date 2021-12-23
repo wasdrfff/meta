@@ -1,3 +1,8 @@
-@use 'global';
-@use 'fonts';
-//@import "~bootstrap/scss/bootstrap";
+@use "global";
+@use "fonts";
+@use "header";
+@use "footer";
+@use "footer-sub";
+@use "landing-page";
+@use "form-persons";
+@use "dropdown";

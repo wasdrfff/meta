@@ -1,0 +1,76 @@
+include libs/_libs
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script.  
+            var numberOfChildren = 0;
+            function incrementChildren() {
+            if (numberOfChildren<100) numberOfChildren++;
+            $('#numberOfChildren').text(numberOfChildren);
+            
+            }
+            function decrementChildren(){
+            if (numberOfChildren > 0) numberOfChildren--;
+            $('#numberOfChildren').text(numberOfChildren);
+            
+            }
+            var numberOfBabies = 0;
+            function incrementBabies() {
+            if (numberOfBabies<100) numberOfBabies++;
+            $('#numberOfBabies').text(numberOfBabies);
+            
+            }
+            function decrementBabies(){
+            if (numberOfBabies> 0) numberOfBabies--;
+            $('#numberOfBabies').text(numberOfBabies);
+            
+            }
+            var numberOfAdults = 0;
+            function incrementAdults() {
+            if (numberOfAdults<100) numberOfAdults++;
+            $('#numberOfAdults').text(numberOfAdults);
+            
+            }
+            function decrementAdults(){
+            if (numberOfAdults > 0) numberOfAdults--;
+            $('#numberOfAdults').text(numberOfAdults);
+            
+            }
+            function closeModal(){
+                $('#dropdown').hide()
+                $('#guests').text(numberOfBabies + numberOfAdults + numberOfChildren)
+            }
+            function reset(){
+                $('#guests').text('Количество гостей');
+                $('#numberOfAdults').text(numberOfAdults = 0);
+                $('#numberOfBabies').text(numberOfBabies = 0);
+                $('#numberOfChildren').text(numberOfChildren = 0)
+                $('#dropdown').hide();
+            }
+    body
+        .dropdown__content
+            .dropdown__row
+                span Взрослые
+                .counter
+                    button(onclick="decrementAdults()") -
+                    span(id='numberOfAdults' ) 0
+                    button(onclick="incrementAdults()") +
+            .dropdown__row
+                span Дети
+                .counter
+                    button(onclick="decrementChildren()") -
+                    span(id='numberOfChildren' ) 0
+                    button(onclick="incrementChildren()") +
+            .dropdown__row
+                span Младенцы
+                .counter
+                    button(onclick="decrementBabies()") -
+                    span(id='numberOfBabies') 0
+                    button(onclick="incrementBabies()") +
+        .dropdown__actions
+            span(onclick="reset()") Отчистить            
+            span(onclick="closeModal()") Применить
+            

@@ -1,5 +1,5 @@
 {
-  "name": "webpack-template",
+  "name": "meta-lamp",
   "version": "1.0.0",
   "description": "Basic configuration of Webpack",
   "main": "index.js",
@@ -10,15 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitalii-kopiievskiy/webpack-template.git"
+    "url": "git+https://github.com/wasdrfff/meta.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vitalii-kopiievskiy/webpack-template/issues"
+    "url": "https://github.com/wasdrfff/meta/issues"
   },
-  "homepage": "https://github.com/vitalii-kopiievskiy/webpack-template#readme",
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
@@ -41,7 +40,11 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.10.2",
+    "air-datepicker": "^3.1.0",
     "bootstrap": "^5.1.3",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "jquery-ui-multidatespicker": "^1.6.6",
+    "multipicker": "^1.1.1",
+    "pg-calendar": "^1.4.31"
   }
 }
