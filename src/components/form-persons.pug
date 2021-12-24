@@ -51,7 +51,8 @@ html(lang="en")
             });
 
             $("#from").on('cancel.daterangepicker', function(ev, picker) {
-                $(this).val('');
+                $("#start").text('ДД.ММ.ГГ');
+                $("#end").text('ДД.ММ.ГГ');
             });
             
             });

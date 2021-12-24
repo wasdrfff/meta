@@ -1,0 +1,43 @@
+.modal-auth {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    padding-left: 24px;
+  }
+  &__form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    input {
+      margin: 12px;
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+    #log-in {
+      width: 320px;
+      height: 44px;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 22px;
+      border: 0;
+      color: white;
+    }
+  }
+
+  &__register {
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    button {
+      border-radius: 22px;
+      width: 99px;
+      height: 44px;
+      color: #bc9cff;
+      background-color: white;
+      border: 1px solid #8ba4f9;
+    }
+  }
+}
