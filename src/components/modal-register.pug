@@ -1,0 +1,33 @@
+doctype html
+include /libs/_libs
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        script.
+            function openAuthModal(){
+                    toggleRegisterModal()
+                    toggleAuthModal()
+            }
+    body
+        .modal-register(id="register-modal")
+            h2 Регистрация аккаунта
+            .modal-register__name
+                input(placeholder='Имя')
+                input(placeholder='Фамилия')
+            .modal-register__sex
+                input(type="checkbox") 
+                input(type="checkbox") 
+            .modal-register__dateOfBirth
+                label Дата рождения
+                input( placeholder="ДД.ММ.ГГ")
+            .modal-register__dataSignIn
+                input(placeholder="Email")
+                input(placeholder="Пароль")
+                button Получать спецпредложения
+            button  Перейти к оплате
+            .modal-register__signIn 
+                span Уже есть аккаунт Toxin
+                button(onclick="openAuthModal()") Войти

@@ -1,17 +1,26 @@
+
 head 
     script.
-        var isModalOpen=false;
-        function openModalAuth(){
-            if(!isModalOpen){
-            $("#auth-modal").hide()
-            isModalOpen=true 
-            }
-            else{
-                $("#auth-modal").show()
-                isModalOpen=false
-            }
-            }
         
+        function toggleAuthModal(){
+            var authModal=$("#auth-modal")
+            authModal.toggle() 
+            $("#register-modal").hide()
+            }
+    script. 
+        function closeProfile(){
+            $("#user").hide()
+            $("#actions").show()
+            }
+    script.
+        
+        function toggleRegisterModal(){
+            var regModal=$('#register-modal')
+            regModal.toggle()
+
+            $("#auth-modal").hide()
+            }
+
 header.header
     .logo
         img(src='../src/images/Logo.png' alt="logo")
@@ -22,9 +31,14 @@ header.header
             span Вакансии
             span Новости
             span Соглашения
-        .header__auth
-            button.header__sign-in(onclick='openModalAuth()') Войти
+        .header__auth(id="actions")
+            button.header__sign-in(onclick='toggleAuthModal()') Войти
             .header__modal(id="auth-modal")
                 include ./modal-auth
-            button.header__register Зарегистрироваться
+            button.header__register(onclick="toggleRegisterModal()") Зарегистрироваться
+            .header__modalRegister(id="register-modal")
+                include ./modal-register
+
+        .header__user(id="user")
+            span(onclick="closeProfile()") Юрий Цезарь
     
