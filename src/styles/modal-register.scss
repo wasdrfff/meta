@@ -1,11 +1,188 @@
+$toggle-background-color-on: white;
+$toggle-background-color-off: white;
+$toggle-control-color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$toggle-width: 40px;
+$toggle-height: 20px;
+$toggle-gutter: 5px;
+$toggle-radius: 50%;
+$toggle-control-speed: .15s;
+$toggle-control-ease: ease-in;
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
+
 .modal-register {
+  font-family: Montserrat;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: white;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  &__name{
+    display: flex;
+    flex-direction: column;
+    input{
+      margin: 12px;
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+  }
+  &__sex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 86%;
+    margin: 12px;
+    input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 50%;
+      width: 14px;
+      height: 14px;
+      border: 2px solid #999;
+      transition: 0.2s all linear;
+      margin-right: 5px;
+    }
+    input:checked {
+      border: 5px solid #BC9CFF;
+    }
+    
+  }
+  &__dateOfBirth{
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    label{
+      font-size: 12px;
+      font-weight: bold;
+    }
+    input{
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+  }
+  &__dataSignIn{
+    display: flex;
+    flex-direction: column;
+    margin: 12px;
+    label{
+      font-size: 12px;
+      font-weight: bold;
+    }
+    input{
+      margin-bottom: 12px;
+      width: 320px;
+      height: 44px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      box-sizing: border-box;
+      border-radius: 4px;
+    }
+    .toggle-control {
+      display: flex;
+      label{
+        padding:6px;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: normal;
+        color:rgba(31, 32, 65, 0.75);
+      }
+      position: relative;
+      padding-left: $toggle-width;
+      margin-bottom: 12px;
+      cursor: pointer;
+      font-size: 22px;
+      user-select: none;
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        
+      }
+    
+      input:checked ~ .control {
+        &:after {
+          left: $toggle-width - $toggle-control-size - $toggle-gutter;
+          background: $toggle-control-color;
+        }
+      }
+    
+      .control {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: $toggle-height;
+        width: $toggle-width;
+        border-radius: $toggle-radius;
+        border:1px solid gray;
+        
+        transition: background-color $toggle-control-speed $toggle-control-ease;
+        &:after {
+          content: "";
+          position: absolute;
+          left: $toggle-gutter;
+          top: $toggle-gutter;
+          width: $toggle-control-size;
+          height: $toggle-control-size;
+          border-radius: $toggle-radius;
+          background: gray;
+          transition: left $toggle-control-speed $toggle-control-ease;
+        }
+      }
+    }
+  }
+  &__action{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border: 0;
+      margin-bottom: 42px;
+      border-radius: 22px;
+      margin-top: 10px;
+      width: 320px;
+      height: 44px;
+      cursor: pointer;
+      span {
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+        text-transform: uppercase;
+        padding-left: 92px;
+        color: #ffffff;
+      }
+      .material-icons{
+        font-family: Material Icons;
+        color: white;
+        padding-right: 12px;
+      }
+  }
+  &__signIn{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 24px;
+    width: 83%;
+    button{
+      width: 99px;
+      height: 44px;
+      border-radius: 22px;
+      color:#BC9CFF;
+      border: 1px solid #BC9CFF;
+      background-color: white;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
 }
+

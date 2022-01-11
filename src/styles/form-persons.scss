@@ -70,23 +70,29 @@
     }
   }
   &__action {
-    button {
+    .content {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
       border: 0;
       border-radius: 22px;
       margin-top: 10px;
-      padding: 14px 22px 15px 94px;
+      padding: 14px 15px;
+      cursor: pointer;
       span {
         font-weight: bold;
         font-size: 12px;
         line-height: 15px;
         text-transform: uppercase;
-        text-align: center;
+        padding-left: 62px;
         color: #ffffff;
         // width: 44px;
         // height: 44px;
+      }
+      .material-icons{
+        font-family: Material Icons;
+        color: white;
       }
     }
   }

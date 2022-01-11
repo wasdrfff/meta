@@ -18,16 +18,24 @@ html(lang="en")
                 input(placeholder='Имя')
                 input(placeholder='Фамилия')
             .modal-register__sex
-                input(type="checkbox") 
-                input(type="checkbox") 
+                input(type="radio" name="sex" value="мужчина" id="male")
+                label(for="male") Мужчина
+                input(type="radio" name="sex" value="женщина" id="female")
+                label(for="female") Женщина 
             .modal-register__dateOfBirth
-                label Дата рождения
+                label ДАТА РОЖДЕНИЯ
                 input( placeholder="ДД.ММ.ГГ")
             .modal-register__dataSignIn
+                label ДАННЫЕ ДЛЯ ВХОДА В СЕРВИС
                 input(placeholder="Email")
                 input(placeholder="Пароль")
-                button Получать спецпредложения
-            button  Перейти к оплате
+                label.toggle-control
+                    input(type="checkbox" checked="checked")
+                    span.control
+                    label Получать спецпредложения
+            .modal-register__action  
+              span Перейти к оплате
+              .material-icons arrow_forward
             .modal-register__signIn 
-                span Уже есть аккаунт Toxin
+                span Уже есть аккаунт Toxin?
                 button(onclick="openAuthModal()") Войти
